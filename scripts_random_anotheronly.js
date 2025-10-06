@@ -180,7 +180,8 @@ request.onreadystatechange = () => {
 if (request.readyState == 4 && request.status == 200) {
       // JSONデータを変換
   let arrayData = JSON.parse(request.responseText);
-  
+  var search_array = new Array();
+  var search_count = 0;
    for(i=1;i<arrayData.length;i++){
       if(arrayData[i][4]=="DEFAULT"){//DEFAULTを除かない場合
         if(no_default == 0){
