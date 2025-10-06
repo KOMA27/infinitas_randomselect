@@ -1,5 +1,3 @@
-<script>
-
 function bt_allselect_normal(){
   for(i=1;i<28;i++){
     var tmpid = "v" + i;
@@ -144,4 +142,3 @@ function all_generate(){
     document.getElementById("kadai_html").innerHTML = "生成失敗";
   }
 }
-</script>
