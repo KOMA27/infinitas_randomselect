@@ -1,0 +1,272 @@
+<style>
+.wrapper{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+  
+.position_sticky {
+  position: -webkit-sticky;
+  position:         sticky;
+  top: 0;
+}
+
+.card-header .fa {
+  transition: .3s transform ease-in-out;
+}
+.card-header .collapsed .fa {
+  transform: rotate(90deg);
+}
+.filter-header a:link,.filter-header a:visited,.filter-header a:hover,.filter-header a:active {
+  color: white;
+  text-decoration: none;
+}
+.progress-bar-NOLAMP {
+  background-color: #EEEEEE !important;
+}
+.progress-bar-NOPLAY {
+  background-color: #EEEEEE !important;
+}
+.progress-bar-FAILED {
+  background-color: #CCCCCC !important;
+}
+.progress-bar-ASSISTED {
+  background-color: #CC99FF !important;
+}
+.progress-bar-EASY {
+  background-color: #99FF99 !important;
+}
+.progress-bar-CLEAR {
+  background-color: #99CCFF !important;
+}
+.progress-bar-HARD {
+  background-color: #FF6666 !important;
+}
+.progress-bar-EXHARD {
+  background-color: #FFFF99 !important;
+}
+.progress-bar-FULLCOMBO {
+  background-color: #FF9966 !important;
+}
+
+.tooltip-inner {
+  min-width: 100px;
+  max-width: 100%; 
+}
+
+.pc-dsp { display:block; }
+.sp-dsp { display:none; }
+
+
+@media (max-width:767px) { 
+.table-smart-phone-xx th { font-size:xx-small;}
+.table-smart-phone-xx td { font-size:xx-small;}
+.table-smart-phone-xx td .small-txt{ font-size:xx-small!important; }
+.table-smart-phone-xx th { padding: .25rem!important; }
+.table-smart-phone-xx td { padding: .25rem!important; }
+
+.table-smart-phone-x th { font-size:x-small;}
+.table-smart-phone-x td { font-size:x-small;}
+.table-smart-phone-x th { padding: .5rem!important; }
+.table-smart-phone-x td { padding: .5rem!important; }
+
+.table-smart-phone-sm th { font-size:small;}
+.table-smart-phone-sm td { font-size:small;}
+.table-smart-phone-sm th { padding: .5rem!important; }
+.table-smart-phone-sm td { padding: .5rem!important; }
+
+.padding-sm{ padding: .75rem !important;}
+
+.page-link{padding: 0.25rem .35rem !important;}
+
+.pc-dsp { display:none; }
+.sp-dsp { display:block; }
+
+}
+
+.score-index-lg-dsp { display:block; }
+.score-index-md-dsp { display:none; }
+
+@media (max-width:100px) { 
+.score-index-lg-dsp { display:none; }
+.score-index-md-dsp { display:block; }
+}
+
+
+.table-hid{
+  display:none !important;
+  width:0 !important;
+  height:0 !important;
+  opacity:0 !important;
+  visibility: collapse !important;
+}
+
+ul.list{list-style-type:none;margin:0;padding:0;}/*リセット*/
+ul.list > li{margin-bottom:0.5em;line-height:1.6;padding-left:1.5em;position:relative;}
+ul.list > li i{line-height:1.6;position:absolute;top:0;left:0;}
+
+dl.list > dt{list-style-type:none;margin:0;padding:0;}/*リセット*/
+dl.list > dt{margin-bottom:0.5em;line-height:1.6;padding-left:1.5em;position:relative;}
+dl.list > dt i{line-height:1.6;position:absolute;top:0;left:0;}
+
+ol.list {
+  counter-reset: my-counter;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ol.list > li {
+  font-size: 16px;
+  line-height: 1.5;
+  padding-left: 30px;
+  position: relative;
+}
+ol.list > li:before {
+  content: counter(my-counter);
+  counter-increment: my-counter;
+  background-color: #333;
+  border: 1px solid;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 22px;
+  width: 22px;
+  color: #ffffff;
+  font-size: 85%;
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.table-elem{
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+.small-txt{
+  display:none;
+}
+input#det_visible:checked ~ div div.small-txt{
+  display:inline-block;
+}
+
+
+ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+li[data-toggle="collapse"]:hover{
+    opacity: 0.5 ;
+}
+#accordion_menu > li {
+    border: #666666 1px solid;
+    margin-bottom: -1px;
+}
+#accordion_menu a{
+    color: #666666;
+}
+#accordion_menu a[data-toggle="collapse"]{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+  position: relative;
+}
+#accordion_menu a[data-toggle="collapse"]:hover{
+    //background: #e7e7e7;
+    //opacity: 0.5 ;
+}
+#accordion_menu a[data-toggle="collapse"]::after{
+    content:"";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-top: #666 1px solid;
+    border-right: #666 1px solid;
+    position: absolute;
+    right: 15px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+#accordion_menu a[aria-expanded=false]::after{
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition-duration: 0.3s;
+}
+#accordion_menu a[aria-expanded=true]::after{
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+    transition-duration: 0.3s;
+}
+[id^="menu"] li{
+    padding: 10px 10px 10px 20px;
+}
+
+
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.number-input {
+  border: 2px solid #ddd;
+  display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+  box-sizing: border-box;
+}
+
+.number-input button {
+  outline:none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+}
+
+.number-input button:after {
+  display: inline-block;
+  position: absolute;
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900;
+  content: '\f077';
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+.number-input button.plus:after {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.number-input input[type=number] {
+  font-family: sans-serif;
+  max-width: 4rem;
+  padding: .5rem;
+  border: solid #ddd;
+  border-width: 0 2px;
+  font-size: 1.2rem;
+  height: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+</style>
