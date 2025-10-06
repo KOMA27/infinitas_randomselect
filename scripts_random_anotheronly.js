@@ -72,7 +72,7 @@ function kadai_generate(){
   subpackage_flag.push(document.getElementById("sdvx2").checked);
   subpackage_flag.push(document.getElementById("th1").checked);
   subpackage_flag.push(document.getElementById("um1").checked);
-  
+  /*
   google.script.run.withSuccessHandler(result).withFailureHandler(failed_result).get_kadai_anotheronly(Number(document.getElementById("select_lowlv").value),Number(document.getElementById("select_uplv").value),normalpackage_flag,subpackage_flag,document.getElementById("no_default").checked,document.getElementById("no_bit").checked,Number(document.getElementById("select_songcount").value));
   function result(data){//バージョン,曲名,ランプ,cpi
     if(data.length < document.getElementById("select_songcount").value){
@@ -97,6 +97,7 @@ function kadai_generate(){
   function failed_result(){
     document.getElementById("kadai_html").innerHTML = "生成失敗";
   }
+  */
 }
 
 function all_generate(){
@@ -124,7 +125,7 @@ function all_generate(){
   subpackage_flag.push(document.getElementById("um1").checked);
   //subpackage_flag.push(false);
   
-  google.script.run.withSuccessHandler(result).withFailureHandler(failed_result).get_all_anotheronly(Number(document.getElementById("select_lowlv").value),Number(document.getElementById("select_uplv").value),normalpackage_flag,subpackage_flag,document.getElementById("no_default").checked,document.getElementById("no_bit").checked);
+  /*google.script.run.withSuccessHandler(result).withFailureHandler(failed_result).get_all_anotheronly(Number(document.getElementById("select_lowlv").value),Number(document.getElementById("select_uplv").value),normalpackage_flag,subpackage_flag,document.getElementById("no_default").checked,document.getElementById("no_bit").checked);
   function result(data){//バージョン,曲名,ランプ,cpi
     document.getElementById("kadai_html").innerHTML = "";
     html = html+'<thead><tr><th>曲名</th><th>難易度</th><th>アーティスト</th><th>解禁条件</th></tr></thead><tbody>';
@@ -141,4 +142,5 @@ function all_generate(){
   function failed_result(){
     document.getElementById("kadai_html").innerHTML = "生成失敗";
   }
+  */
 }
