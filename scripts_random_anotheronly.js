@@ -154,9 +154,9 @@ function all_generate(){
     // 全てのデータを受信・正常に処理された場合
   if (request.readyState == 4 && request.status == 200) {
       // JSONデータを変換
-    let json = JSON.parse(request.responseText);
+    let data = JSON.parse(request.responseText);
     html = html+'<thead><tr><th>曲名</th><th>難易度</th><th>アーティスト</th><th>解禁条件</th></tr></thead><tbody>';
-    for (i=1;i<json.length;i++) {
+    for (i=1;i<data.length;i++) {
         html = html+'<tr><td class="sorting_1">'+data[i][0]+'</td>';
         html = html+'<td>'+data[i][4]+'</td>';
         html = html+'<td>'+data[i][1]+'</td>';
