@@ -1,5 +1,30 @@
 <!DOCTYPE html>
 <html>
+<body>
+<main>
+  <script>
+  async function fetchData(url, options) {
+    try {
+      const response = await fetch(url, options);
+      const data = await response.json();
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  } 
+  let url = "https://script.google.com/macros/s/AKfycbyvLMsHsOT7EcOJJYnNQzVsvlP3Lpo9f7kCIvRSqFRzLvuVBClN5UdlEnIM47b_OFo/exec?sheetName=All_2";
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "text/plain",
+    },
+    body: JSON.stringify(data),
+  };
+  console.log(fetchData(url, options));
+  </script>  
+</main>
+    
+</body>
+  <!--
 <head>
   <base target="_top">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.21/datatables.min.css">
@@ -214,4 +239,5 @@
         </div>
     </footer>
   </body>
+  -->
 </html>
