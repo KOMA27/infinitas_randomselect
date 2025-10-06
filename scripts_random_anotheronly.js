@@ -164,7 +164,7 @@ function all_generate(){
         html=html+'</tr>';
       }
       html=html+'</tbody>';
-      document.getElementById("song_list").innerHTML = html;
+      document.getElementById("kadai_table").innerHTML = html;
     }
   }
   
