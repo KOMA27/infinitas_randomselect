@@ -6,7 +6,9 @@
     display: -o-flex;
     display: flex;
 }
-  
+.form-control{
+    display:inline;
+}
 .position_sticky {
   position: -webkit-sticky;
   position:         sticky;
