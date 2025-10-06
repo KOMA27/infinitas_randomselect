@@ -102,9 +102,7 @@ function kadai_generate(){
   */
 }
 
-async function all_generate(){
-  var html='';
-  
+async function all_generate(){  
   document.getElementById("kadai_html").innerHTML = "読込中...";
   document.getElementById("kadai_table").innerHTML = "";
   var normalpackage_flag =[];
@@ -125,42 +123,7 @@ async function all_generate(){
   subpackage_flag.push(document.getElementById("sdvx2").checked);
   subpackage_flag.push(document.getElementById("th1").checked);
   subpackage_flag.push(document.getElementById("um1").checked);
-  //subpackage_flag.push(false);
-  
-  /*google.script.run.withSuccessHandler(result).withFailureHandler(failed_result).get_all_anotheronly(Number(document.getElementById("select_lowlv").value),Number(document.getElementById("select_uplv").value),normalpackage_flag,subpackage_flag,document.getElementById("no_default").checked,document.getElementById("no_bit").checked);
-  function result(data){//バージョン,曲名,ランプ,cpi
-    document.getElementById("kadai_html").innerHTML = "";
-    html = html+'<thead><tr><th>曲名</th><th>難易度</th><th>アーティスト</th><th>解禁条件</th></tr></thead><tbody>';
-    for (i=0;i<data.length;i++) {
-      html = html+'<tr><td class="sorting_1">'+data[i][0]+'</td>';
-      html = html+'<td>'+data[i][4]+'</td>';
-      html = html+'<td>'+data[i][1]+'</td>';
-      html = html+'<td>'+data[i][3]+'</td>';
-      html=html+'</tr>';
-    }
-    html=html+'</tbody>';
-    document.getElementById("kadai_table").innerHTML = html;
-  }
-  function failed_result(){
-    document.getElementById("kadai_html").innerHTML = "生成失敗";
-  }
-  */
-
-    var data = new Array();
-    data = get_all_anotheronly(Number(document.getElementById("select_lowlv").value),Number(document.getElementById("select_uplv").value),normalpackage_flag,subpackage_flag,document.getElementById("no_default").checked,document.getElementById("no_bit").checked);
-    sleep(1);
-
-    html = html+'<thead><tr><th>曲名</th><th>難易度</th><th>アーティスト</th><th>解禁条件</th></tr></thead><tbody>';
-    for (i=0;i<data.length;i++) {
-        html = html+'<tr><td class="sorting_1">'+data[i][0]+'</td>';
-        html = html+'<td>'+data[i][4]+'</td>';
-        html = html+'<td>'+data[i][1]+'</td>';
-        html = html+'<td>'+data[i][3]+'</td>';
-        html=html+'</tr>';
-    }
-    html=html+'</tbody>';
-    document.getElementById("kadai_html").innerHTML = "";
-    document.getElementById("kadai_table").innerHTML = html;
+  get_all_anotheronly(Number(document.getElementById("select_lowlv").value),Number(document.getElementById("select_uplv").value),normalpackage_flag,subpackage_flag,document.getElementById("no_default").checked,document.getElementById("no_bit").checked);
 }
 
 function get_all_anotheronly(lowlv,uplv,normalpackage_flag,subpackage_flag,no_default,no_bit){
@@ -185,6 +148,7 @@ request.onreadystatechange = () => {
     let arrayData = JSON.parse(request.responseText);
     var search_array = new Array();
     var search_count = 0;
+    var html="";
      for(i=1;i<arrayData.length;i++){
         if(arrayData[i][4]=="DEFAULT"){//DEFAULTを除かない場合
           if(no_default == 0){
@@ -258,8 +222,18 @@ request.onreadystatechange = () => {
           }
         }
       }
-      console.log(search_array);
-      return search_array;
+    html = html+'<thead><tr><th>曲名</th><th>難易度</th><th>アーティスト</th><th>解禁条件</th></tr></thead><tbody>';
+    for (i=0;i<search_array.length;i++) {
+        html = html+'<tr><td class="sorting_1">'+search_array[i][0]+'</td>';
+        html = html+'<td>'+search_array[i][4]+'</td>';
+        html = html+'<td>'+search_array[i][1]+'</td>';
+        html = html+'<td>'+search_array[i][3]+'</td>';
+        html=html+'</tr>';
+    }
+    html=html+'</tbody>';
+    document.getElementById("kadai_html").innerHTML = "";
+    document.getElementById("kadai_table").innerHTML = html;
+
     }
   }
 }
