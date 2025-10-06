@@ -2,7 +2,7 @@
 <html>
 <head>
 <script>
-const output_svg = document.getElementById('song_list');
+const output_csv = document.getElementById('song_list');
 
 function csv_data(dataPath) {
 	const request = new XMLHttpRequest(); // HTTPでファイルを読み込む
@@ -35,7 +35,7 @@ csv_data('ALL_2.csv'); // csvのパス
 </head>
 <body>
 <main>
-    <div id="song_list"></div>
+    <table id="song_list"></table>
 </main>
     
 </body>
