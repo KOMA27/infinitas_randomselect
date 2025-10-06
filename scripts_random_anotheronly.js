@@ -170,6 +170,7 @@ function get_all_anotheronly(lowlv,uplv,normalpackage_flag,subpackage_flag,no_de
   subpackage_flag = [0,0,0,0,0,0,0,0,0,0,0,0];//st1,st2,st3,pm1,pm2,bpl1,bpl2,jb1,sdvx1,sdvx2,th1,th2
   no_default = 0;
   no_bit = 0;*/
+console.log(lowlv,uplv,normalpackage_flag,subpackage_flag,no_default,no_bit);
 let request = new XMLHttpRequest();
 
   // JSONファイルが置いてあるパスを記述
@@ -182,7 +183,6 @@ request.onreadystatechange = () => {
   if (request.readyState == 4 && request.status == 200) {
         // JSONデータを変換
     let arrayData = JSON.parse(request.responseText);
-    console.log(arrayData);
     var search_array = new Array();
     var search_count = 0;
      for(i=1;i<arrayData.length;i++){
@@ -258,7 +258,8 @@ request.onreadystatechange = () => {
           }
         }
       }
-      return arrayData;
+      console.log(search_array);
+      return search_array;
     }
   }
 }
