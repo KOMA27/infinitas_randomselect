@@ -1,4 +1,4 @@
-const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
+
 function bt_allselect_normal(){
   for(i=1;i<28;i++){
     var tmpid = "v" + i;
@@ -46,6 +46,10 @@ function bt_noselect_sub(){
 
 
 function kadai_generate(){
+  if(Number(document.getElementById("select_lowlv").value)>Number(document.getElementById("select_uplv").value)){
+    document.getElementById("kadai_html").innerHTML = "レベル範囲が異常です。";
+    return;
+  }
   var tableOptions = {
     paging: false,
     searching : false,
@@ -205,6 +209,10 @@ function getRandomIntInclusive(min, max) {
 
 
 function all_generate(){  
+  if(Number(document.getElementById("select_lowlv").value)>Number(document.getElementById("select_uplv").value)){
+    document.getElementById("kadai_html").innerHTML = "レベル範囲が異常です。";
+    return;
+  }
   document.getElementById("kadai_html").innerHTML = "読込中...";
   document.getElementById("kadai_table").innerHTML = "";
   var normalpackage_flag =[];
