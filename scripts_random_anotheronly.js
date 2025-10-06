@@ -1,3 +1,4 @@
+const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 function bt_allselect_normal(){
   for(i=1;i<28;i++){
     var tmpid = "v" + i;
