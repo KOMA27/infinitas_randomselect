@@ -165,34 +165,35 @@ request.onreadystatechange = () => {
         }
       }
     }
-  }
-}
-  if(search_array.length<=select_songcount){
-    return search_array;
-  }else{
-    var output_kadai = new Array();
-    for(i=0;i<select_songcount;i++){
-      for(;;){
-        rand = getRandomIntInclusive(0,search_count-1);
-        if(search_array[rand][6]==0){
-          search_array[rand][6]=1;
-          output_kadai[i]=search_array[rand];
-          break;
+      if(search_array.length<=select_songcount){
+        return search_array;
+      }else{
+        var output_kadai = new Array();
+        for(i=0;i<select_songcount;i++){
+          for(;;){
+            rand = getRandomIntInclusive(0,search_count-1);
+            if(search_array[rand][6]==0){
+              search_array[rand][6]=1;
+              output_kadai[i]=search_array[rand];
+              break;
+            }
+            continue;
+          }
         }
-        continue;
+        html = html+'<thead><tr><th>曲名</th><th>難易度</th><th>アーティスト</th><th>解禁条件</th></tr></thead><tbody>';
+        for (i=0;i<output_kadai.length;i++) {
+            html = html+'<tr><td class="sorting_1">'+output_kadai[i][0]+'</td>';
+            html = html+'<td>'+output_kadai[i][4]+'</td>';
+            html = html+'<td>'+output_kadai[i][1]+'</td>';
+            html = html+'<td>'+output_kadai[i][3]+'</td>';
+            html=html+'</tr>';
+        }
+        html=html+'</tbody>';
+        document.getElementById("kadai_html").innerHTML = "";
+        document.getElementById("kadai_table").innerHTML = html;
+        
       }
     }
-    html = html+'<thead><tr><th>曲名</th><th>難易度</th><th>アーティスト</th><th>解禁条件</th></tr></thead><tbody>';
-    for (i=0;i<output_kadai.length;i++) {
-        html = html+'<tr><td class="sorting_1">'+output_kadai[i][0]+'</td>';
-        html = html+'<td>'+output_kadai[i][4]+'</td>';
-        html = html+'<td>'+output_kadai[i][1]+'</td>';
-        html = html+'<td>'+output_kadai[i][3]+'</td>';
-        html=html+'</tr>';
-    }
-    html=html+'</tbody>';
-    document.getElementById("kadai_html").innerHTML = "";
-    document.getElementById("kadai_table").innerHTML = html;
   }
 }
 
