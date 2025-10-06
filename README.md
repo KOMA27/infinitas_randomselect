@@ -1,0 +1,2 @@
+# infinitas_randomselect
+INFINITAS収録曲の簡易ランダムセレクトツールです。
