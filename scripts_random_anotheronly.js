@@ -255,9 +255,7 @@ if (request.readyState == 4 && request.status == 200) {
         }
       }
     }
-    Logger.log(search_array.length);
-    Logger.log(search_array);
-    return search_array;
+    return arrayData;
 }
 }
 }
