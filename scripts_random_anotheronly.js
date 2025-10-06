@@ -152,7 +152,7 @@ function all_generate(){
     document.getElementById("kadai_html").innerHTML = "生成失敗";
   }
   */
-const response = await fetch("https://script.google.com/macros/s/AKfycbyvLMsHsOT7EcOJJYnNQzVsvlP3Lpo9f7kCIvRSqFRzLvuVBClN5UdlEnIM47b_OFo/exec?sheetName=All_2";, {
+const response = fetch("https://script.google.com/macros/s/AKfycbyvLMsHsOT7EcOJJYnNQzVsvlP3Lpo9f7kCIvRSqFRzLvuVBClN5UdlEnIM47b_OFo/exec?sheetName=All_2";, {
   method: 'POST',
   headers: {
     'Content-Type': 'text/plain', // 'application/json'から変更
