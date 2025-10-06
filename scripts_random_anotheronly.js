@@ -189,7 +189,7 @@ request.onreadystatechange = () => {
             html = html+'<tr><td class="sorting_1">'+output_kadai[i][0]+'</td>';
             html = html+'<td>'+output_kadai[i][4]+'</td>';
             html = html+'<td>'+output_kadai[i][1]+'</td>';
-            html = html+'<td>'+output_kadai[i][3]+'</td>';
+            html = html+'<td>'+output_kadai[i][5]+'</td>';
             html=html+'</tr>';
         }
         html=html+'</tbody>';
@@ -329,7 +329,7 @@ request.onreadystatechange = () => {
         html = html+'<tr><td class="sorting_1">'+search_array[i][0]+'</td>';
         html = html+'<td>'+search_array[i][4]+'</td>';
         html = html+'<td>'+search_array[i][1]+'</td>';
-        html = html+'<td>'+search_array[i][3]+'</td>';
+        html = html+'<td>'+search_array[i][5]+'</td>';
         html=html+'</tr>';
     }
     html=html+'</tbody>';
