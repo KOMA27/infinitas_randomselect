@@ -2,24 +2,7 @@
 <html>
 <body>
 <main>
-  <script>
-  async function fetchData(url, options) {
-    try {
-      const response = await fetch(url, options);
-      const data = await response.json();
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  } 
-  let url = "https://script.google.com/macros/s/AKfycbyvLMsHsOT7EcOJJYnNQzVsvlP3Lpo9f7kCIvRSqFRzLvuVBClN5UdlEnIM47b_OFo/exec?sheetName=All_2";
-  const options = {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
-  console.log(fetchData(url, options));
-  </script>  
+
 </main>
     
 </body>
