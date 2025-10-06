@@ -1,4 +1,4 @@
 # infinitas_randomselect
-INFINITAS収録曲の簡易ランダムセレクトツールです。
+INFINITAS収録曲の簡易ランダムセレクトツールです。\n
 2025/10/1までの収録曲のうち、SP・ANOTHERのみを対象にしています。
 
