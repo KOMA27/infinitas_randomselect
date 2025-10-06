@@ -74,6 +74,8 @@ function kadai_generate(){
   subpackage_flag.push(document.getElementById("sdvx2").checked);
   subpackage_flag.push(document.getElementById("th1").checked);
   subpackage_flag.push(document.getElementById("um1").checked);
+
+  get_kadai_anotheronly(Number(document.getElementById("select_lowlv").value),Number(document.getElementById("select_uplv").value),normalpackage_flag,subpackage_flag,document.getElementById("no_default").checked,document.getElementById("no_bit").checked,Number(document.getElementById("select_songcount").value);
 }
 
 function get_kadai_anotheronly(lowlv,uplv,normalpackage_flag,subpackage_flag,no_default,no_bit,select_songcount){
