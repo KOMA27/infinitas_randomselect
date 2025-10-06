@@ -182,6 +182,7 @@ request.onreadystatechange = () => {
   if (request.readyState == 4 && request.status == 200) {
         // JSONデータを変換
     let arrayData = JSON.parse(request.responseText);
+    console.log(arrayData);
     var search_array = new Array();
     var search_count = 0;
      for(i=1;i<arrayData.length;i++){
@@ -257,7 +258,7 @@ request.onreadystatechange = () => {
           }
         }
       }
+      return arrayData;
     }
   }
-  return arrayData;
 }
