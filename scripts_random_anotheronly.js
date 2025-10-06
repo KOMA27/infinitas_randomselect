@@ -1,3 +1,12 @@
+async function fetchData(url, options) {
+  try {
+    const response = await fetch(url, options);
+    const data = await response.json();
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
 function bt_allselect_normal(){
   for(i=1;i<28;i++){
     var tmpid = "v" + i;
@@ -143,4 +152,15 @@ function all_generate(){
     document.getElementById("kadai_html").innerHTML = "生成失敗";
   }
   */
+  const url =
+  "https://script.google.com/macros/s/AKfycbyvLMsHsOT7EcOJJYnNQzVsvlP3Lpo9f7kCIvRSqFRzLvuVBClN5UdlEnIM47b_OFo/exec?sheetName=All_2";
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  document.getElementById("kadai_table").innerHTML = fetchData(url, options);
+  
+  
 }
