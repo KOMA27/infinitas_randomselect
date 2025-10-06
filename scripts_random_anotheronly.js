@@ -145,7 +145,9 @@ function all_generate(){
   */
 
     var data = get_all_anotheronly(Number(document.getElementById("select_lowlv").value),Number(document.getElementById("select_uplv").value),normalpackage_flag,subpackage_flag,document.getElementById("no_default").checked,document.getElementById("no_bit").checked);
-    html = html+'<thead><tr><th>曲名</th><th>難易度</th><th>アーティスト</th><th>解禁条件</th></tr></thead><tbody>';
+   console.log(data); 
+  /*
+  html = html+'<thead><tr><th>曲名</th><th>難易度</th><th>アーティスト</th><th>解禁条件</th></tr></thead><tbody>';
     for (i=0;i<data.length;i++) {
         html = html+'<tr><td class="sorting_1">'+data[i][0]+'</td>';
         html = html+'<td>'+data[i][4]+'</td>';
@@ -156,7 +158,7 @@ function all_generate(){
       html=html+'</tbody>';
       document.getElementById("kadai_html").innerHTML = "";
       document.getElementById("kadai_table").innerHTML = html;
-  
+  */
   
 }
 
