@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <?!= HtmlService.createHtmlOutputFromFile('js_bootstrap').getContent(); ?>
+  <?!= HtmlService.createHtmlOutputFromFile('style.css').getContent(); ?>
+  <?!= HtmlService.createHtmlOutputFromFile("scripts_random_anotheronly.js").getContent(); ?>
+  
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-info mb-5">
+    <a href="<?= getAppUrl() ?>?page=another_only" class="navbar-brand align-bottom">INFINITAS ランセレツール </a>
+    </nav>
+  </header>
+
+<main class="main">
+  <div class="container">
+    <div class="display home content">
+
+      <div class="card border-secondary mb-3 mt-3">
+        <div class="card-body text-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="mb-3">
+                          <h1 class="card-title">INFINITASランセレツール</h4>
+                          <h4 class="card-title">条件指定</h4>
+                          <p>
+                            2025/10/01 収録までのデータです。<br>
+                            難易度ANOTHERのみ対象です。<br>
+                          </p>
+                          <div class="card-body">
+
+                            <hr>
+                            
+                            <form action="#" name="detail-form" data-persist="garlic">
+                             <h5 class="card-title">レベル範囲</h5>
+                              <ul>
+                                <div class="col-md-3 mb-3 wrapper">Lv
+                                    <select id="select_lowlv" class="h5 form-control">
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10" selected>10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                  </select>～
+                                  <select id="select_uplv" class="h5 form-control">
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12" selected>12</option>
+                                  </select>
+                                </div>
+                              </ul>    
+                              <h5 class="card-title">所持楽曲パック</h5>
+                              <ul>
+                                <div class="row">
+                                  <div class="col-md-12 mb-3 ml-4">
+                                  <h5 class="card-title">通常パック</h3>
+                                    <div class="form-check">
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v1" class="garlic-auto-save">楽曲パックvol.01</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v2" class="garlic-auto-save">楽曲パックvol.02</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v3" class="garlic-auto-save">楽曲パックvol.03</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v4" class="garlic-auto-save">楽曲パックvol.04</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v5" class="garlic-auto-save">楽曲パックvol.05</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v6" class="garlic-auto-save">楽曲パックvol.06</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v7" class="garlic-auto-save">楽曲パックvol.07</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v8" class="garlic-auto-save">楽曲パックvol.08</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v9" class="garlic-auto-save">楽曲パックvol.09</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v10" class="garlic-auto-save">楽曲パックvol.10</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v11" class="garlic-auto-save">楽曲パックvol.11</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v12" class="garlic-auto-save">楽曲パックvol.12</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v13" class="garlic-auto-save">楽曲パックvol.13</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v14" class="garlic-auto-save">楽曲パックvol.14</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v15" class="garlic-auto-save">楽曲パックvol.15</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v16" class="garlic-auto-save">楽曲パックvol.16</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v17" class="garlic-auto-save">楽曲パックvol.17</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v18" class="garlic-auto-save">楽曲パックvol.18</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v19" class="garlic-auto-save">楽曲パックvol.19</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v20" class="garlic-auto-save">楽曲パックvol.20</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v21" class="garlic-auto-save">楽曲パックvol.21</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v22" class="garlic-auto-save">楽曲パックvol.22</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v23" class="garlic-auto-save">楽曲パックvol.23</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v24" class="garlic-auto-save">楽曲パックvol.24</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v25" class="garlic-auto-save">楽曲パックvol.25</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v26" class="garlic-auto-save">楽曲パックvol.26</label>
+                                      <label class="mr-4"><input class="form-check-input normal_pack" type="checkbox" id="v27" class="garlic-auto-save">楽曲パックvol.27</label>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary" onclick="bt_allselect_normal()">全選択</button>
+                                    <button type="button" class="btn btn-outline-danger" onclick="bt_noselect_normal()">全解除</button>
+                                  </div>
+                                </div>
+                              </ul>
+                              <ul>
+                                <div class="row">
+                                  <div class="col-md-12 mb-3 ml-4">
+                                  <h5 class="card-title">サブパック</h3>
+                                    <div class="form-check">
+                                      <label class="mr-4"><input class="form-check-input" type="checkbox" id="st1" class="garlic-auto-save">スタートアップセレクションvol.1</label>
+                                      <label class="mr-4"><input class="form-check-input" type="checkbox" id="st2" class="garlic-auto-save">スタートアップセレクションvol.2</label>
+                                      <label class="mr-4"><input class="form-check-input" type="checkbox" id="st3" class="garlic-auto-save">スタートアップセレクションvol.3</label>
+                                      <label class="mr-4"><input class="form-check-input" type="checkbox" id="pm1" class="garlic-auto-save">pop'n music セレクションvol.1</label>
+                                      <label class="mr-4"><input class="form-check-input" type="checkbox" id="pm2" class="garlic-auto-save">pop'n music セレクションvol.2</label>
+                                      <label class="mr-4"><input class="form-check-input" type="checkbox" id="bpl1" class="garlic-auto-save">BPL セレクションvol.1</label>
+                                      <label class="mr-4"><input class="form-check-input" type="checkbox" id="bpl2" class="garlic-auto-save">BPL セレクションvol.2</label>
+                                      <label class="mr-4"><input class="form-check-input" type="checkbox" id="jb1" class="garlic-auto-save">jubeat セレクションvol.1</label>
+                                      <label class="mr-4"><input class="form-check-input" type="checkbox" id="sdvx1" class="garlic-auto-save">SOUND VOLTEX セレクションvol.1</label>
+                                      <label class="mr-4"><input class="form-check-input" type="checkbox" id="sdvx2" class="garlic-auto-save">SOUND VOLTEX セレクションvol.2</label>
+                                      <label class="mr-4"><input class="form-check-input" type="checkbox" id="th1" class="garlic-auto-save">東方Project セレクションvol.1</label>
+                                      <label class="mr-4"><input class="form-check-input" type="checkbox" id="um1" class="garlic-auto-save">ULTIMATE MOBILE セレクションvol.1</label>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary" onclick="bt_allselect_sub()">全選択</button>
+                                    <button type="button" class="btn btn-outline-danger" onclick="bt_noselect_sub()">全解除</button>
+                                  </div>
+                                </div>
+                              </ul>                                                                                      
+                              <h5 class="card-title">選曲条件</h5>
+                              <ul>
+                                <div class="row">
+                                  <div class="col-md-12 mb-3 ml-4">
+                                    <div class="form-check">
+                                      <label class="mr-4"><input class="form-check-input" type="checkbox" id="no_default" class="garlic-auto-save">デフォルト曲を除く</label>
+                                      <label class="mr-4"><input class="form-check-input" type="checkbox" id="no_bit" class="garlic-auto-save">BIT解禁を除く</label>
+                                      <!--
+                                      <label class="mr-4"><input class="form-check-input" type="checkbox" id="another_only" class="garlic-auto-save">難易度ANOTHER以上に限る</label>
+                                      <label class="mr-4"><input class="form-check-input" type="checkbox" id="no_leggendaria" class="garlic-auto-save" checked>LEGGENDARIAを除く</label>
+                                      -->
+                                  </div>
+                                </div>
+                              </ul>           
+                            </form>
+                          <input id="import_bt" type="submit" class="btn btn-success" onclick="all_generate()" value="全曲リスト作成"></input>
+                          </div>
+                          <div class="card-body">
+                            <p>
+                              上記条件からn曲ランダムに選曲します。<br>
+                            </p>
+                            <hr>
+                            <form action="#" name="detail-form" data-persist="garlic">
+                              <h5 class="card-title">ランセレ選曲数</h5>
+                              <ul>
+                                <div class="col-md-3 mb-3">
+                                  <select id="select_songcount" class="h5 form-control">
+                                    <option value="1" selected>1曲</option>
+                                    <option value="2">2曲</option>
+                                    <option value="3">3曲</option>
+                                    <option value="4">4曲</option>
+                                    <option value="5">5曲</option>
+                                    <option value="6">6曲</option>
+                                    <option value="7">7曲</option>
+                                    <option value="8">8曲</option>
+                                    <option value="9">9曲</option>
+                                    <option value="10">10曲</option>
+                                  </select>
+                                </div>
+                              </ul>                         
+                            </form>
+                          <input id="import_bt" type="submit" class="btn btn-success" onclick="kadai_generate()" value="課題曲生成！"></input>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card border-secondary mb-3"><div class="card-header padding-sm"><h3 class="mb-0">曲リスト</h3></div>
+        <!--<div class="card-body text-dark"><div class="container"><div id="kadai_html">
+        </div><table id="kadai_table" class="table table-bordered" style="table-layout: fixed;overflow-wrap: break-word;word-wrap: break-word;">-->
+        <div class="container">
+          <div class="table-responsive">
+              <div id="scores-index_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                <div class="row">
+                  <div id="all-data-index" class="col-sm-12">
+                    <div id="kadai_html"></div>
+                    <table id="kadai_table" class="table table-hover table-smart-phone-xx dataTable no-footer" role="grid" aria-describedby="scores-index_info">
+                    <!--ALLデータ表示-->
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </table></div></div></div>
+    </div>
+  </div>
+</main>
+<footer class="mt-5 mb-3">
+        <div class="container" style="text-align:center">
+            <div class="text-muted" style="font-size: 12px;">
+                <br>
+                <p>
+                beatmaniaⅡDXは、株式会社コナミデジタルエンタテインメントの商標または登録商標です。<br>
+                本サービスは、株式会社コナミデジタルエンタテインメントとは一切関係の無い個人が製作した非公式ファンサイトです。
+                </p>
+                <br>
+            </div>
+        </div>
+    </footer>
+  </body>
+</html>
