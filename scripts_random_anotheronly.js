@@ -101,7 +101,7 @@ function kadai_generate(){
   */
 }
 
-function all_generate(){
+async function all_generate(){
   var html='';
   
   document.getElementById("kadai_html").innerHTML = "読込中...";
@@ -147,7 +147,7 @@ function all_generate(){
 
     var data = new Array();
     data = get_all_anotheronly(Number(document.getElementById("select_lowlv").value),Number(document.getElementById("select_uplv").value),normalpackage_flag,subpackage_flag,document.getElementById("no_default").checked,document.getElementById("no_bit").checked);
-  
+    sleep(1);
     console.log(get_all_anotheronly(Number(document.getElementById("select_lowlv").value),Number(document.getElementById("select_uplv").value),normalpackage_flag,subpackage_flag,document.getElementById("no_default").checked,document.getElementById("no_bit").checked)); 
     console.log(data); 
   /*
