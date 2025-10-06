@@ -144,8 +144,11 @@ function all_generate(){
   }
   */
 
-    var data = get_all_anotheronly(Number(document.getElementById("select_lowlv").value),Number(document.getElementById("select_uplv").value),normalpackage_flag,subpackage_flag,document.getElementById("no_default").checked,document.getElementById("no_bit").checked);
-   console.log(data); 
+    var data = new Array();
+    data = get_all_anotheronly(Number(document.getElementById("select_lowlv").value),Number(document.getElementById("select_uplv").value),normalpackage_flag,subpackage_flag,document.getElementById("no_default").checked,document.getElementById("no_bit").checked);
+  
+    console.log(search_array); 
+    console.log(data); 
   /*
   html = html+'<thead><tr><th>曲名</th><th>難易度</th><th>アーティスト</th><th>解禁条件</th></tr></thead><tbody>';
     for (i=0;i<data.length;i++) {
@@ -170,7 +173,6 @@ function get_all_anotheronly(lowlv,uplv,normalpackage_flag,subpackage_flag,no_de
   subpackage_flag = [0,0,0,0,0,0,0,0,0,0,0,0];//st1,st2,st3,pm1,pm2,bpl1,bpl2,jb1,sdvx1,sdvx2,th1,th2
   no_default = 0;
   no_bit = 0;*/
-console.log(lowlv,uplv,normalpackage_flag,subpackage_flag,no_default,no_bit);
 let request = new XMLHttpRequest();
 
   // JSONファイルが置いてあるパスを記述
@@ -258,7 +260,6 @@ request.onreadystatechange = () => {
           }
         }
       }
-      console.log(search_array);
       return search_array;
     }
   }
