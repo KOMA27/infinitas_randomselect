@@ -135,7 +135,7 @@ request.onreadystatechange = () => {
             search_array[search_count][2] = arrayData[i][2];
             search_array[search_count][3] = arrayData[i][3];
             search_array[search_count][4] = "ANOTHER " + arrayData[i][5];
-            search_array[search_count][5] = arrayData[i][5];
+            search_array[search_count][5] = arrayData[i][3];
             search_array[search_count][6] = 0;
             search_count++; 
           }
@@ -162,7 +162,7 @@ request.onreadystatechange = () => {
             search_array[search_count][2] = arrayData[i][2];
             search_array[search_count][3] = arrayData[i][3];
             search_array[search_count][4] = "ANOTHER " + arrayData[i][5];
-            search_array[search_count][5] = arrayData[i][5];
+            search_array[search_count][5] = arrayData[i][3];
             search_array[search_count][6] = 0;
             search_count++; 
           }
@@ -290,7 +290,7 @@ request.onreadystatechange = () => {
               search_array[search_count][2] = arrayData[i][2];
               search_array[search_count][3] = arrayData[i][3];
               search_array[search_count][4] = "ANOTHER " + arrayData[i][5];
-              search_array[search_count][5] = arrayData[i][5];
+              search_array[search_count][5] = arrayData[i][3];
               search_array[search_count][6] = 0;
               search_count++; 
             }
@@ -317,7 +317,7 @@ request.onreadystatechange = () => {
               search_array[search_count][2] = arrayData[i][2];
               search_array[search_count][3] = arrayData[i][3];
               search_array[search_count][4] = "ANOTHER " + arrayData[i][5];
-              search_array[search_count][5] = arrayData[i][5];
+              search_array[search_count][5] = arrayData[i][3];
               search_array[search_count][6] = 0;
               search_count++; 
             }
