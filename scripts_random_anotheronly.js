@@ -143,8 +143,30 @@ function all_generate(){
     document.getElementById("kadai_html").innerHTML = "生成失敗";
   }
   */
+  let request = new XMLHttpRequest();
 
-  document.getElementById("kadai_table").innerHTML = html;
+  // JSONファイルが置いてあるパスを記述
+  request.open('GET', 'ALL_2.json');
+  request.send();
+
+  // JSON読み込み時の処理
+  request.onreadystatechange = () => {
+    // 全てのデータを受信・正常に処理された場合
+  if (request.readyState == 4 && request.status == 200) {
+      // JSONデータを変換
+    let json = JSON.parse(request.responseText);
+    html = html+'<thead><tr><th>曲名</th><th>難易度</th><th>アーティスト</th><th>解禁条件</th></tr></thead><tbody>';
+    for (i=1;i<data.length;i++) {
+        html = html+'<tr><td class="sorting_1">'+data[i][0]+'</td>';
+        html = html+'<td>'+data[i][4]+'</td>';
+        html = html+'<td>'+data[i][1]+'</td>';
+        html = html+'<td>'+data[i][3]+'</td>';
+        html=html+'</tr>';
+      }
+      html=html+'</tbody>';
+      document.getElementById("song_list").innerHTML = html;
+    }
+  }
   
   
 }
