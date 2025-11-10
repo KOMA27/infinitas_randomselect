@@ -1,6 +1,6 @@
 # infinitas_randomselect
 INFINITAS収録曲の簡易ランダムセレクトツールです。
 
-2025/10/1までの収録曲のうち、SP・ANOTHERのみを対象にしています。
+2025/11/08までの収録曲のうち、SP・ANOTHERのみを対象にしています。
 
 https://koma27.github.io/infinitas_randomselect/
