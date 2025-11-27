@@ -79,10 +79,10 @@ function kadai_generate(){
   subpackage_flag.push(document.getElementById("th1").checked);
   subpackage_flag.push(document.getElementById("um1").checked);
 
-  get_kadai_anotheronly(Number(document.getElementById("select_lowlv").value),Number(document.getElementById("select_uplv").value),normalpackage_flag,subpackage_flag,document.getElementById("no_default").checked,document.getElementById("no_bit").checked,Number(document.getElementById("select_songcount").value));
+  get_kadai(Number(document.getElementById("select_lowlv").value),Number(document.getElementById("select_uplv").value),normalpackage_flag,subpackage_flag,document.getElementById("no_default").checked,document.getElementById("no_bit").checked,document.getElementById("no_leggendaria").checked,Number(document.getElementById("select_songcount").value));
 }
 
-function get_kadai_anotheronly(lowlv,uplv,normalpackage_flag,subpackage_flag,no_default,no_bit,no_leggendaria,select_songcount){
+function get_kadai(lowlv,uplv,normalpackage_flag,subpackage_flag,no_default,no_bit,no_leggendaria,select_songcount){
 let request = new XMLHttpRequest();
 request.open('GET', 'ALL_2.json');
 request.send();
@@ -277,10 +277,10 @@ function all_generate(){
   subpackage_flag.push(document.getElementById("sdvx2").checked);
   subpackage_flag.push(document.getElementById("th1").checked);
   subpackage_flag.push(document.getElementById("um1").checked);
-  get_all_anotheronly(Number(document.getElementById("select_lowlv").value),Number(document.getElementById("select_uplv").value),normalpackage_flag,subpackage_flag,document.getElementById("no_default").checked,document.getElementById("no_bit").checked);
+  get_all(Number(document.getElementById("select_lowlv").value),Number(document.getElementById("select_uplv").value),normalpackage_flag,subpackage_flag,document.getElementById("no_default").checked,document.getElementById("no_bit").checked,document.getElementById("no_leggendaria").checked);
 }
 
-function get_all_anotheronly(lowlv,uplv,normalpackage_flag,subpackage_flag,no_default,no_bit,no_leggendaria){
+function get_all(lowlv,uplv,normalpackage_flag,subpackage_flag,no_default,no_bit,no_leggendaria){
 
 let request = new XMLHttpRequest();
 request.open('GET', 'ALL_2.json');
