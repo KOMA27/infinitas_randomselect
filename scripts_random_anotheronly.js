@@ -82,7 +82,7 @@ function kadai_generate(){
   get_kadai_anotheronly(Number(document.getElementById("select_lowlv").value),Number(document.getElementById("select_uplv").value),normalpackage_flag,subpackage_flag,document.getElementById("no_default").checked,document.getElementById("no_bit").checked,Number(document.getElementById("select_songcount").value));
 }
 
-function get_kadai_anotheronly(lowlv,uplv,normalpackage_flag,subpackage_flag,no_default,no_bit,select_songcount){
+function get_kadai_anotheronly(lowlv,uplv,normalpackage_flag,subpackage_flag,no_default,no_bit,no_leggendaria,select_songcount){
 let request = new XMLHttpRequest();
 request.open('GET', 'ALL_2.json');
 request.send();
@@ -100,15 +100,26 @@ request.onreadystatechange = () => {
       if(arrayData[i][4]=="DEFAULT"){//DEFAULTを除かない場合
         if(no_default == 0){
           if(arrayData[i][5]>=lowlv && arrayData[i][5]<=uplv){
-                  search_array[search_count] = new Array();
-                  search_array[search_count][0] = arrayData[i][0];
-                  search_array[search_count][1] = arrayData[i][1];
-                  search_array[search_count][2] = arrayData[i][2];
-                  search_array[search_count][3] = arrayData[i][3];
-                  search_array[search_count][4] = "ANOTHER " + arrayData[i][5];
-                  search_array[search_count][5] = "デフォルト解禁";
-                  search_array[search_count][6] = 0;
-                  search_count++; 
+            search_array[search_count] = new Array();
+            search_array[search_count][0] = arrayData[i][0];
+            search_array[search_count][1] = arrayData[i][1];
+            search_array[search_count][2] = arrayData[i][2];
+            search_array[search_count][3] = arrayData[i][3];
+            search_array[search_count][4] = "ANOTHER " + arrayData[i][5];
+            search_array[search_count][5] = "デフォルト解禁";
+            search_array[search_count][6] = 0;
+            search_count++; 
+          }
+          if(arrayData[i][6]>=lowlv && arrayData[i][6]<=uplv && no_leggendaria==0){
+            search_array[search_count] = new Array();
+            search_array[search_count][0] = arrayData[i][0];
+            search_array[search_count][1] = arrayData[i][1];
+            search_array[search_count][2] = arrayData[i][2];
+            search_array[search_count][3] = arrayData[i][3];
+            search_array[search_count][4] = "LEGGENDARIA " + arrayData[i][6];
+            search_array[search_count][5] = "デフォルト解禁";
+            search_array[search_count][6] = 0;
+            search_count++; 
           }
         }
       }else if(arrayData[i][4]=="BIT"){//BIT解禁を除かない場合
@@ -124,6 +135,17 @@ request.onreadystatechange = () => {
             search_array[search_count][6] = 0;
             search_count++; 
           }
+          if(arrayData[i][6]>=lowlv && arrayData[i][6]<=uplv && no_leggendaria==0){
+            search_array[search_count] = new Array();
+            search_array[search_count][0] = arrayData[i][0];
+            search_array[search_count][1] = arrayData[i][1];
+            search_array[search_count][2] = arrayData[i][2];
+            search_array[search_count][3] = arrayData[i][3];
+            search_array[search_count][4] = "LEGGENDARIA " + arrayData[i][6];
+            search_array[search_count][5] = "BIT解禁";
+            search_array[search_count][6] = 0;
+            search_count++; 
+          }
         }
       }else if(arrayData[i][4].charAt(0)=="v"){
         var package_version = arrayData[i][4].replace(/[^0-9]/g, '') - 1;
@@ -135,6 +157,17 @@ request.onreadystatechange = () => {
             search_array[search_count][2] = arrayData[i][2];
             search_array[search_count][3] = arrayData[i][3];
             search_array[search_count][4] = "ANOTHER " + arrayData[i][5];
+            search_array[search_count][5] = arrayData[i][3];
+            search_array[search_count][6] = 0;
+            search_count++; 
+          }
+          if(arrayData[i][6]>=lowlv && arrayData[i][6]<=uplv && no_leggendaria==0){
+            search_array[search_count] = new Array();
+            search_array[search_count][0] = arrayData[i][0];
+            search_array[search_count][1] = arrayData[i][1];
+            search_array[search_count][2] = arrayData[i][2];
+            search_array[search_count][3] = arrayData[i][3];
+            search_array[search_count][4] = "LEGGENDARIA " + arrayData[i][6];
             search_array[search_count][5] = arrayData[i][3];
             search_array[search_count][6] = 0;
             search_count++; 
@@ -162,6 +195,17 @@ request.onreadystatechange = () => {
             search_array[search_count][2] = arrayData[i][2];
             search_array[search_count][3] = arrayData[i][3];
             search_array[search_count][4] = "ANOTHER " + arrayData[i][5];
+            search_array[search_count][5] = arrayData[i][3];
+            search_array[search_count][6] = 0;
+            search_count++; 
+          }
+          if(arrayData[i][6]>=lowlv && arrayData[i][6]<=uplv && no_leggendaria==0){
+            search_array[search_count] = new Array();
+            search_array[search_count][0] = arrayData[i][0];
+            search_array[search_count][1] = arrayData[i][1];
+            search_array[search_count][2] = arrayData[i][2];
+            search_array[search_count][3] = arrayData[i][3];
+            search_array[search_count][4] = "LEGGENDARIA " + arrayData[i][6];
             search_array[search_count][5] = arrayData[i][3];
             search_array[search_count][6] = 0;
             search_count++; 
@@ -236,7 +280,7 @@ function all_generate(){
   get_all_anotheronly(Number(document.getElementById("select_lowlv").value),Number(document.getElementById("select_uplv").value),normalpackage_flag,subpackage_flag,document.getElementById("no_default").checked,document.getElementById("no_bit").checked);
 }
 
-function get_all_anotheronly(lowlv,uplv,normalpackage_flag,subpackage_flag,no_default,no_bit){
+function get_all_anotheronly(lowlv,uplv,normalpackage_flag,subpackage_flag,no_default,no_bit,no_leggendaria){
 
 let request = new XMLHttpRequest();
 request.open('GET', 'ALL_2.json');
@@ -265,6 +309,17 @@ request.onreadystatechange = () => {
                     search_array[search_count][6] = 0;
                     search_count++; 
             }
+            if(arrayData[i][6]>=lowlv && arrayData[i][6]<=uplv && no_leggendaria==0){
+              search_array[search_count] = new Array();
+              search_array[search_count][0] = arrayData[i][0];
+              search_array[search_count][1] = arrayData[i][1];
+              search_array[search_count][2] = arrayData[i][2];
+              search_array[search_count][3] = arrayData[i][3];
+              search_array[search_count][4] = "LEGGENDARIA " + arrayData[i][6];
+              search_array[search_count][5] = "デフォルト解禁";
+              search_array[search_count][6] = 0;
+              search_count++; 
+            }
           }
         }else if(arrayData[i][4]=="BIT"){//BIT解禁を除かない場合
           if(no_bit==0){
@@ -275,6 +330,17 @@ request.onreadystatechange = () => {
               search_array[search_count][2] = arrayData[i][2];
               search_array[search_count][3] = arrayData[i][3];
               search_array[search_count][4] = "ANOTHER " + arrayData[i][5];
+              search_array[search_count][5] = "BIT解禁";
+              search_array[search_count][6] = 0;
+              search_count++; 
+            }
+            if(arrayData[i][6]>=lowlv && arrayData[i][6]<=uplv && no_leggendaria==0){
+              search_array[search_count] = new Array();
+              search_array[search_count][0] = arrayData[i][0];
+              search_array[search_count][1] = arrayData[i][1];
+              search_array[search_count][2] = arrayData[i][2];
+              search_array[search_count][3] = arrayData[i][3];
+              search_array[search_count][4] = "LEGGENDARIA " + arrayData[i][6];
               search_array[search_count][5] = "BIT解禁";
               search_array[search_count][6] = 0;
               search_count++; 
@@ -290,6 +356,17 @@ request.onreadystatechange = () => {
               search_array[search_count][2] = arrayData[i][2];
               search_array[search_count][3] = arrayData[i][3];
               search_array[search_count][4] = "ANOTHER " + arrayData[i][5];
+              search_array[search_count][5] = arrayData[i][3];
+              search_array[search_count][6] = 0;
+              search_count++; 
+            }
+            if(arrayData[i][6]>=lowlv && arrayData[i][6]<=uplv && no_leggendaria==0){
+              search_array[search_count] = new Array();
+              search_array[search_count][0] = arrayData[i][0];
+              search_array[search_count][1] = arrayData[i][1];
+              search_array[search_count][2] = arrayData[i][2];
+              search_array[search_count][3] = arrayData[i][3];
+              search_array[search_count][4] = "LEGGENDARIA " + arrayData[i][6];
               search_array[search_count][5] = arrayData[i][3];
               search_array[search_count][6] = 0;
               search_count++; 
@@ -317,6 +394,17 @@ request.onreadystatechange = () => {
               search_array[search_count][2] = arrayData[i][2];
               search_array[search_count][3] = arrayData[i][3];
               search_array[search_count][4] = "ANOTHER " + arrayData[i][5];
+              search_array[search_count][5] = arrayData[i][3];
+              search_array[search_count][6] = 0;
+              search_count++; 
+            }
+            if(arrayData[i][6]>=lowlv && arrayData[i][6]<=uplv && no_leggendaria==0){
+              search_array[search_count] = new Array();
+              search_array[search_count][0] = arrayData[i][0];
+              search_array[search_count][1] = arrayData[i][1];
+              search_array[search_count][2] = arrayData[i][2];
+              search_array[search_count][3] = arrayData[i][3];
+              search_array[search_count][4] = "LEGGENDARIA " + arrayData[i][6];
               search_array[search_count][5] = arrayData[i][3];
               search_array[search_count][6] = 0;
               search_count++; 
